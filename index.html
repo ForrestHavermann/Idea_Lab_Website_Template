@@ -1,0 +1,102 @@
+<!DOCTYPE html>  <!-- You can find all of the code here on W3 schools, there will be according links on several blocks of code if you wish to learn more. -->
+<html lang="en"> <!-- This is a comment and they will be used all through this code, you can learn more about them here https://www.w3schools.com/html/html_comments.asp -->
+<head>
+<title>Template_Test</title> <!-- This determines the title of the website tab, more info can be found here: https://www.w3schools.com/html/html_intro.asp -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This determines how the website will scale and resize itself -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!-- This is a imported stylesheet for the navigation bar -->
+<style>
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+</style> <!-- This stylesheet was writen in for the navigation arrows on the gallery pictures -->
+<style>
+* {
+    box-sizing: border-box;
+}
+/* Style the footer */
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+</style> <!-- This is a in-line stylesheet for the footer of this website, you can lear more here: https://www.w3schools.com/css/css_website_layout.asp -->
+</head> <!-- In the above stylesheet it uses a hexadecimal code for the color of the background, this should explain: https://www.w3schools.com/css/css_colors.asp -->
+<body>
+
+  <div class="w3-bar w3-blue"> <!-- This block is a CSS navigation bar, more types can be found here: https://www.w3schools.com/css/css_navbar.asp -->
+    <a href="http://www.rrcc.edu/" class="w3-bar-item w3-button">RRCC Home</a>
+    <a href="http://www.rrcc.edu/idea-institute/idea-lab" class="w3-bar-item w3-button">Idea Lab Home</a>
+    <a href="https://github.com/RedRocksCommunityCollege" class="w3-bar-item w3-button">Idea Lab Github</a>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">Laser Lab Website</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="<!-- put the link to your github here -->" class="w3-bar-item w3-button">Project Github</a>
+        <a href="#" class="w3-bar-item w3-button">Idea Lab Projects</a>
+        <a href="<!-- You can put in your own link here -->" class="w3-bar-item w3-button">Custom link</a>
+      </div>
+    </div>
+  </div>
+
+
+<h1><center>RRCC Laser Lab</center></h1> <!-- You can put the title of your project here -->
+
+<div class="w3-content w3-display-container" style="max-width:device-width">
+  <h3><center-left>Gallery</center-left></h3>
+<!-- This is the gallery block, more styles of galleries can be found here: -->
+  <img class="mySlides" src="http://www.asimplepinebox.com/wp-content/uploads/2017/03/Laser-Cutter-Machine-770x396.jpg" style="width:100%">
+  <img class="mySlides" src="https://inanemathgeek.files.wordpress.com/2012/06/schwartz_david_lab09_1887.jpg" style="width:100%">
+  <img class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOoF1ot5F4zanZsnkBCaEwdRu1VlgMpuMRQuMJZG6c7SjsIfkJ" style="width:100%">
+  <img class="mySlides" src="http://gentillymessenger.com/wp-content/uploads/vlcsnap-2015-04-21-02h16m01s82.png" style="width:100%">
+    <div class="w3-center w3-container w3-section w3-large w3-text-green w3-display-bottommiddle" style="width:100%">
+    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+	<span class="w3-badge demo w3-border" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border" onclick="currentDiv(3)"></span>
+	<span class="w3-badge demo w3-border" onclick="currentDiv(4)"></span>
+  </div> <!-- Make sure to link the images you use in the folder in your github, information on links can be found here: https://www.w3schools.com/html/html_links.asp -->
+</div>
+<br>
+<br>
+<div class="w3-content w3-display-container" style="max-width:device-width">
+<h3><center-left>What is It?</center-left></h3>
+<br>
+<p> Here you can put information on what exactly your project is! <p>
+</div>
+
+<div class="footer">
+  <p>Footer</p>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script> <!-- This is a script that has been manualy written in the code for the sliding of the images in the gallery -->
+
+</body>
+</html>
